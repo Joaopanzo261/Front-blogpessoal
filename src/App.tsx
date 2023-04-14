@@ -16,7 +16,7 @@ function App() {
           <Switch>
               <div style={{minHeight:'100vh'}}>
 
-              <Route exact path='/'>
+              <Routes exact path='/'>
                     < Login />
                 </Route>
 
@@ -26,7 +26,7 @@ function App() {
 
                 <Route path='/home'>
                     < Home />
-                </Route>
+                </Routes>
               </div>
           </Switch>
 
