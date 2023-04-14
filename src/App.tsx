@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/estaticos/navbar/Navbar';
 import Footer from './components/estaticos/footer/Footer';
 import reactLogo from './assets/react.svg'
@@ -11,27 +11,18 @@ import Login from './assets/paginas/login/Login';
 
 function App() {
   return (
-    <Router>
-        <Navbar />
-          <Switch>
-              <div style={{minHeight:'100vh'}}>
-
-              <Routes exact path='/'>
-                    < Login />
-                </Route>
-
-              <Route path='/login'>
-                    < Login />
-                </Route>
-
-                <Route path='/home'>
-                    < Home />
-                </Routes>
-              </div>
-          </Switch>
-
-        <Footer />
-    </Router>
+    <BrowserRouter>
+      <Navbar />
+      <div style={{ minHeight: '100vh' }}>
+        <Routes> 
+            <Route path="/" element={<Login />} />
+              <Route path="/login" element={<Login />} />
+             <Route path="/home" element={<Home />} />
+             
+        </Routes>
+      </div>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
