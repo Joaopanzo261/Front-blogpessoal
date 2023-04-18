@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/estaticos/navbar/Navbar';
 import Footer from './components/estaticos/footer/Footer';
+import CadastroUsuario from './assets/paginas/cadastroUsuario/CadastroUsuario';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<Login />} />
               <Route path="/login" element={<Login />} />
              <Route path="/home" element={<Home />} />
+             <Route path="/cadastrousuario" element={<CadastroUsuario />} />
              
         </Routes>
       </div>
