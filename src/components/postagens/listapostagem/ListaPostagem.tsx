@@ -7,11 +7,17 @@ import {Box} from '@mui/material';
 import './ListaPostagem.css';
 import useLocalStorage from 'react-use-localstorage';
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/TokensReducer';
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
-  const [token, setToken] = useLocalStorage('token');
+
   let navigate = useNavigate();
+
+  const token = useSelector<TokenState, TokenState["token"]>(
+    (state) => state.token
+  );
 
   useEffect(() => {
     if (token == "") {
